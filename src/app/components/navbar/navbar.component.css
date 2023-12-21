@@ -1,6 +1,10 @@
 .nav-bar{
     background-color:#0148AE !important;
     color: white;
+  
+    position: absolute;
+    z-index: 999;
+    top: 0px;
 }
 .nav_contain{
     margin: 0px 10px ;
