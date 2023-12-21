@@ -1,0 +1,17 @@
+.img-carou_sel{
+    height: 56vh;
+    object-fit: fill;
+}
+.img_text {
+    color: white;
+    font-size: 25px;
+    position: absolute;
+    top: 45%;
+    width: 60%;
+    margin: auto;
+    text-align: center;
+    /* z-index: 999; */
+    /* display: flex; */
+    right: auto;
+    left: 20%;
+}
