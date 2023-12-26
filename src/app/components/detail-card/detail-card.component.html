@@ -1,0 +1,74 @@
+<h4 class="p-5 m-4"><i class="fa-solid fa-backward"></i>Back</h4>
+<div class="card detail_card">
+  <div class="card-body detail_card_b">
+    <div class="p_image">
+      <img [src]="productImage" alt="" />
+
+      <div class="image_card">
+        <div class="img_con" *ngFor="let image of Product.images">
+          <img [src]="image" alt="" />
+        </div>
+        <!-- <div
+          *ngIf="productImage != Product.images[1]"
+          class="img_con"
+          (click)="changeImage(1)"
+        >
+          <img [src]="Product.images[1]" alt="" />
+        </div>
+        <div
+          *ngIf="productImage != Product.images[2]"
+          class="img_con"
+          (click)="changeImage(2)"
+        >
+          <img [src]="Product.images[2]" alt="" />
+        </div>
+        <div
+          *ngIf="productImage != Product.images[3]"
+          class="img_con"
+          (click)="changeImage(3)"
+        >
+          <img [src]="Product.images[3]" alt="" />
+        </div> -->
+      </div>
+    </div>
+    <div class="hori_zon"></div>
+    <div class="p_details">
+      <div class="product_info">
+        <h4>{{ Product?.title }}</h4>
+        <p class="text-secondary">
+          {{ Product?.description }}
+        </p>
+        <h6 class="text-success">Brand {{ Product.brand }}</h6>
+        <div class="product_price">
+          <div class="price_detail">
+            <h6>Price:${{ productPrice }}</h6>
+            <h6>Discount: {{ Product?.discountPercentage }}% off</h6>
+          </div>
+          <h6>Rating: {{ Product?.rating }}</h6>
+        </div>
+      </div>
+      <div class="qty_dis">
+        Qty:
+        <i
+          class="fa fa-circle-plus"
+          style="color: #000000"
+          (click)="quantityChanged(1)"
+        ></i>
+        {{ productQty }}
+        <i
+          class="fa fa-circle-minus"
+          style="color: #000000"
+          (click)="quantityChanged(-1)"
+        ></i>
+      </div>
+      <div class="action_pro">
+        <div class="btn_con">
+          <button class="buy_button m-2">Buy</button>
+
+          <button class="cart_button m-2">Add To Cart</button>
+        </div>
+        <i class="fa-regular fa-heart wish_list m-2" style="color: #225bbf"></i>
+      </div>
+    </div>
+  </div>
+</div>

@@ -5,6 +5,8 @@
     position: absolute;
     z-index: 999;
     top: 0px;
+    position: fixed;
+    /* margin-bottom: 400px !important; */
 }
 .nav_contain{
     margin: 0px 10px ;

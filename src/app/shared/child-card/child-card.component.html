@@ -1,0 +1,33 @@
+<div class="card_con">
+  <div class="card">
+    <div class="card-body card_b">
+      <div class="product_img"><img [src]="Product.images[0]" alt="" /></div>
+      <div class="product_info">
+        <h4 class="p_title" (click)="navigateToTarget(Product.id)">
+          {{ Product?.title }}
+        </h4>
+        <p class="text-secondary">
+          {{ Product?.description }}...<a (click)="navigateToTarget(Product.id)"
+            >Show More</a
+          >
+        </p>
+        <h6 class="text-success">Brand {{ Product.brand }}</h6>
+        <div class="product_price">
+          <div class="price_detail">
+            <h6>Price :${{ Product?.price }}</h6>
+            <h6>Discount : {{ Product?.discountPercentage }}% off</h6>
+          </div>
+          <h6>Rating : {{ Product?.rating }}</h6>
+        </div>
+      </div>
+      <div class="action_pro">
+        <div class="btn_con">
+          <button class="buy_button m-2">Buy</button>
+
+          <button class="cart_button m-2">Add To Cart</button>
+        </div>
+        <i class="fa-regular fa-heart wish_list m-2" style="color: #225bbf"></i>
+      </div>
+    </div>
+  </div>
+</div>
