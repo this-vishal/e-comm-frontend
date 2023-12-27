@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core'
-import { ActivatedRoute } from '@angular/router'
+import { ActivatedRoute, Router } from '@angular/router'
 import { ProductService } from '../../services/products/product.service'
+import { CommonModule } from '@angular/common'
 
 @Component({
   selector: 'app-detail-card',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './detail-card.component.html',
   styleUrl: './detail-card.component.css'
 })
@@ -17,7 +18,8 @@ export class DetailCardComponent implements OnInit {
 
   constructor (
     private _route: ActivatedRoute,
-    private _productService: ProductService
+    private _productService: ProductService,
+    private _router: Router
   ) {}
   ngOnInit (): void {
     this._route.params.subscribe(params => {
@@ -40,5 +42,9 @@ export class DetailCardComponent implements OnInit {
       this.productQty = this.productQty + value
     }
     this.productPrice = this.Product.price * this.productQty
+  }
+
+  goBack () {
+    this._router.navigate([''])
   }
 }

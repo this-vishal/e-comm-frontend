@@ -1,7 +1,7 @@
 .detail_card{
     border-radius: 0px;
     width: 80%;
-    margin: 60px auto;
+    margin: 20px auto;
     /* height: 500px; */
 
     /* overflow: scroll; */
@@ -23,6 +23,9 @@
     width: 100px; 
     object-fit: fill;
     box-shadow: 0px 0px 1px 1px grey;
+    height: 91px;
+    object-fit: scale-down;
+    overflow: hidden;
 
 }
 .img_con img{
@@ -79,6 +82,7 @@
  }
  .qty_dis i{
     cursor: pointer;
+    font-size: larger;
  }
  .button-container {
     display: flex;
@@ -115,4 +119,11 @@
         display: none;
     }
     
+  }
+
+  .back_logo{
+    cursor: pointer;
+  }
+  .back_logo i {
+    margin-right: 5px;
   }

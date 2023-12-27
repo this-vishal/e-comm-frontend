@@ -32,10 +32,10 @@ export class AppComponent implements OnInit {
   constructor (private _productService: ProductService) {}
 
   ngOnInit (): void {
-    this._productService.getProducts().subscribe(data => {
-      this.response = data
-      this.Products = this.response?.products
-      console.log(this.Products, 'products')
-    })
+    // this._productService.getProducts().subscribe(data => {
+    //   this.response = data
+    //   this.Products = this.response?.products
+    //   console.log(this.Products, 'products')
+    // })
   }
 }

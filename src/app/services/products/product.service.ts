@@ -10,8 +10,13 @@ export class ProductService {
 
   constructor (private http: HttpClient) {}
 
-  getProducts (): Observable<any[]> {
-    return this.http.get<any[]>(this.apiUrl)
+  getProducts (value: number, nextIndex: number = 0): Observable<any[]> {
+    const urlWithLimit = `${this.apiUrl}?limit=${value}&skip=${nextIndex}`
+    return this.http.get<any[]>(urlWithLimit)
+  }
+  getProductsLength (): Observable<any[]> {
+    const urlWithLimit = `${this.apiUrl}?limit=${100}`
+    return this.http.get<any[]>(urlWithLimit)
   }
 
   getProductById (id: number): Observable<any> {

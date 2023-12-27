@@ -1,34 +1,24 @@
-<h4 class="p-5 m-4"><i class="fa-solid fa-backward"></i>Back</h4>
+<h5 class="p-5 back_logo" (click)="goBack()">
+  <i class="fa-solid fa-backward"></i>Back
+</h5>
 <div class="card detail_card">
   <div class="card-body detail_card_b">
     <div class="p_image">
       <img [src]="productImage" alt="" />
 
       <div class="image_card">
-        <div class="img_con" *ngFor="let image of Product.images">
-          <img [src]="image" alt="" />
-        </div>
-        <!-- <div
-          *ngIf="productImage != Product.images[1]"
-          class="img_con"
-          (click)="changeImage(1)"
-        >
-          <img [src]="Product.images[1]" alt="" />
-        </div>
         <div
-          *ngIf="productImage != Product.images[2]"
-          class="img_con"
-          (click)="changeImage(2)"
+          *ngFor="let image of Product.images; index as i"
+          class="image_container"
         >
-          <img [src]="Product.images[2]" alt="" />
+          <div
+            class="img_con"
+            *ngIf="productImage !== image"
+            (click)="changeImage(i)"
+          >
+            <img [src]="image" alt="picture" />
+          </div>
         </div>
-        <div
-          *ngIf="productImage != Product.images[3]"
-          class="img_con"
-          (click)="changeImage(3)"
-        >
-          <img [src]="Product.images[3]" alt="" />
-        </div> -->
       </div>
     </div>
     <div class="hori_zon"></div>

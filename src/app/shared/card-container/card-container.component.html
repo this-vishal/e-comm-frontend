@@ -6,10 +6,35 @@
     <div class="card-body card_b row p-0 m-0">
       <div
         class="col-md-4 col-lg-3 col-sm-6 p-0 m-0"
-        *ngFor="let product of products"
+        *ngFor="let product of Products"
       >
         <app-child-card [product]="product"></app-child-card>
       </div>
     </div>
+  </div>
+  <div>
+    <ul class="pagination">
+      <li (click)="decrByOne()"><a href="#">Prev</a></li>
+      <li
+        (click)="currentPageData(activeValue)"
+        [ngClass]="{ active_tab: currentVal + 1 == activeValue }"
+      >
+        <a href="#">{{ activeValue }}</a>
+      </li>
+      <li
+        (click)="currentPageData(activeValue + 1)"
+        [ngClass]="{ active_tab: currentVal + 1 == activeValue + 1 }"
+      >
+        <a href="#">{{ activeValue + 1 }}</a>
+      </li>
+      <li
+        (click)="currentPageData(activeValue + 2)"
+        [ngClass]="{ active_tab: currentVal + 1 == activeValue + 2 }"
+      >
+        <a href="#">{{ activeValue + 2 }}</a>
+      </li>
+
+      <li (click)="incrByOne()"><a href="#">Next</a></li>
+    </ul>
   </div>
 </div>
